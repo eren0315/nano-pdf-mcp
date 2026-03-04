@@ -34,10 +34,15 @@ share/python-wheels/
 
 # Project specific ignores
 *.pdf
-!dummy_500_pages.pdf
-summary_output.md
-Lysn_UX_*.pdf
-split_output.pdf
+*.md.bak
+*_output.md
+*_output.pdf
+
+# Local development / testing
+tests/
+docs/
+.agent/
+GEMINI.md
 
 # Claude / Antigravity settings
 .gemini/

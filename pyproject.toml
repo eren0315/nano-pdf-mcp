@@ -1,14 +1,25 @@
 [project]
 name = "nano-pdf-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "A memory-efficient PDF Reader and Splitter MCP Server"
 readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["mcp", "pdf", "model-context-protocol", "llm", "ai"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "fastmcp",
     "pymupdf",
     "pydantic"
 ]
+
+[project.urls]
+Homepage = "https://github.com/eren0315/nano-pdf-mcp"
+Repository = "https://github.com/eren0315/nano-pdf-mcp"
 
 [project.scripts]
 nano-pdf-mcp = "nano_pdf_mcp.server:main"

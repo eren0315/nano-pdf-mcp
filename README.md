@@ -10,42 +10,19 @@ Built with `fastmcp` and `pymupdf` (PyMuPDF).
 
 ## Usage with MCP Clients (Claude Desktop / Antigravity)
 
-### Method 1: Global Installation (Recommended)
-You can install this MCP server globally so you don't need to specify absolute paths in your configuration.
+**You do NOT need to download or clone this repository to use it!**
+Just like `npx` in the Node.js ecosystem, you can run this Python MCP server directly from GitHub using `uvx` (which comes with `uv`).
 
-1. Open your terminal in the project directory (`C:\\Projects\\pdf_reader_project`).
-2. Run the following command to install the server globally using `uv`:
-   ```bash
-   uv tool install .
-   ```
-3. Now, you can configure your MCP client with just the command name!
+### Claude Desktop Setup
+Add the following to your `claude_desktop_config.json`:
 
-**For Claude Desktop** (`claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
     "nano-pdf-server": {
-      "command": "nano-pdf-mcp",
-      "args": []
-    }
-  }
-}
-```
-
-### Method 2: Running from Source (Development)
-If you are actively developing the project and don't want to reinstall, you can run it directly from the source code. This requires specifying the absolute path to the project directory.
-
-**For Claude Desktop** (`claude_desktop_config.json`):
-```json
-{
-  "mcpServers": {
-    "nano-pdf-server": {
-      "command": "uv",
+      "command": "uvx",
       "args": [
-        "--directory",
-        "ABSOLUTE_PATH_TO_pdf_reader_project",
-        "run",
-        "nano-pdf-mcp"
+        "git+https://github.com/eren0315/nano-pdf-mcp.git"
       ]
     }
   }
@@ -53,4 +30,6 @@ If you are actively developing the project and don't want to reinstall, you can 
 ```
 
 ### Antigravity Setup
-If using `.gemini/settings.json`, simply hook up the `nano-pdf-mcp` command as shown in Method 1.
+If using `.gemini/settings.json`, simply hook up the exact same command: `uvx git+https://github.com/eren0315/nano-pdf-mcp.git`.
+
+
